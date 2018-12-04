@@ -2,14 +2,17 @@ const createUser = (req, res) => {
 
     if (req.url === '/CreateUser' && req.method === 'POST') {
        
-        const body = [];
+        let body = '';
 
-        req.on('data', (chunk) => body.push(chunk));
+        req.on('data', (chunk) => {
+            
+            body += chunk.toString();
+        
+        });
 
         return req.on('end', () => {
 
-            const parsedBody = Buffer.concat(body).toString();
-            const userName = parsedBody.split('=')[1];
+            const userName = body.split('=')[1];
 
             console.log('New User Created: ' + userName);
 
