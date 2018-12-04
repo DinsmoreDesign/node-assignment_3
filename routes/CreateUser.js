@@ -6,8 +6,8 @@ const createUser = (req, res) => {
 
         req.on('data', (chunk) => body.push(chunk));
 
-        return req.on('end', () => {
-
+        return req.on('end', (abc) => {
+            console.log(abc);
             const parsedBody = Buffer.concat(body).toString();
             const userName = parsedBody.split('=')[1];
 
