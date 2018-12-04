@@ -1,6 +1,4 @@
-const fs = require('fs');
-
-const usersHandler = (req, res) => {
+const users = (req, res) => {
 
     if (req.url === '/users') {
 
@@ -10,7 +8,12 @@ const usersHandler = (req, res) => {
                     <title>Users Page</title>
                 </head>
                 <body>
-                    <h1>Users Page</h1>
+                    <h1>All users:</h1>
+                    <ul>
+                        <li>Me</li>
+                        <li>You</li>
+                        <li>That other guy</li>
+                    </ul>
                 </body>
             </html>
         `);
@@ -21,4 +24,4 @@ const usersHandler = (req, res) => {
 
 }
 
-module.exports = usersHandler;
+module.exports = users;

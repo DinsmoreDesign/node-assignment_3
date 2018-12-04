@@ -1,6 +1,4 @@
-const fs = require('fs');
-
-const homeHandler = (req, res) => {
+const home = (req, res) => {
 
     if (req.url === '/') {
 
@@ -10,7 +8,13 @@ const homeHandler = (req, res) => {
                     <title>Home Page</title>
                 </head>
                 <body>
-                    <h1>Home Page</h1>
+                    <h1>Welcome.</h1>
+                    <p>Wanna create a user...?</p>
+                    <form action="/CreateUser" method="POST">
+                        <label>User Name:</label>
+                        <input type="text" name="user-name">
+                        <button type="submit">Submit</button>
+                    </form>
                 </body>
             </html>
         `);
@@ -21,4 +25,4 @@ const homeHandler = (req, res) => {
 
 }
 
-module.exports = homeHandler;
+module.exports = home;
