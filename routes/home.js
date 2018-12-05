@@ -8,7 +8,7 @@ const home = (req, res) => {
                     <title>Home Page</title>
                 </head>
                 <body>
-                    <h1>Welcome.</h1>
+                    <h1>Welcome!</h1>
                     <p>Wanna create a user...?</p>
                     <form action="/CreateUser" method="POST">
                         <label>User Name:</label>
